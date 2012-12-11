@@ -1,0 +1,24 @@
+sf2 - fer, adolfo 20120811
+==========================
+
+a5ff62a512b367a4192f211877ab5a56a8186acc
+
+php app/console #generador interactivo de "cosas"
+
+1) generar bundle 
+   php app/console generate:bundle 
+   #seguir pasos
+
+
+2) generar base de datos 
+   php app/console doctrine:mapping:import NombreBundle annotation    	#crear modelo con los atributos
+   php app/console doctrine:generate:entities BackendBundle				#modifica el model y crea los metodos setter y getter
+
+
+3) generar crud de las Entidades
+   php app/console doctrine:generate:crud								#crea el crud para una Entidad Específicas
+   Entity shorcut name: NombreBundle:Entidad
+
+4) php app/console assets:install web									#instalar assets despues de copiar archivos del bootstrap
+   php app/console cache:clear --no-warnup
+
